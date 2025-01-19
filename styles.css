@@ -18,7 +18,7 @@ main {
     background-color: aquamarine;
 }
 
-#monday-time label,
-#monday-time select {
-    display: block;
+#monday-time, #tuesday-time {
+    display: flex;
+    flex-direction: column;
 }
