@@ -10,4 +10,4 @@ Work in progress...
 
 
 ## Deployed Application Link
-Please view the deployed app [here](https://mintyry.github.io/)!
+Please view the deployed app [here](https://github.com/mintyry)!
