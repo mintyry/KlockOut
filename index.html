@@ -19,8 +19,8 @@
             <!-- parent div holding columns -->
             <div class="day-columns-div">
                 <!-- monday in-time -->
-                <div id="monday-time">
-                    <p>IN time:&ensp;</p>
+                <div id="in">
+                    <p>IN time: &ensp;</p>
                     <select name="clock-in hour" id="mon-in-hour" class="in-hour">
                     </select>
                     <p class="clock-colon">:</p>
@@ -29,11 +29,21 @@
                 </div>
                 <!-- monday lunch duration -->
                 <div class="lunch">
-                    <p>lunch</p>
+                    <p>Lunch duration: &ensp;</p>
+                    <select name="lunch hour" id="mon-lunch-hour" class="lunch-hour">
+                    </select>
+                    <p class="clock-colon">:</p>
+                    <select name="lunch minute" id="mon-lunch-min" class="lunch-min">
+                    </select>
                 </div>
                 <!-- calculate out time -->
                 <div class="out">
-                    <o>out</o>
+                    <p>OUT time: &ensp;</p>
+                    <select name="clock-out hour" id="mon-out-hour" class="out-hour">
+                    </select>
+                    <p class="clock-colon">:</p>
+                    <select name="clock-out minute" id="mon-out-min" class="out-min">
+                    </select>
                 </div>
             </div>
         </section>

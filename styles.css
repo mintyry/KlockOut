@@ -38,7 +38,7 @@ section {
     justify-content: space-around ;
 }
 
-#monday-time, #tuesday-time, #wednesday-time, #thursday-time, #friday-time {
+#in, #tuesday-time, #wednesday-time, #thursday-time, #friday-time, .lunch, .out {
     display: flex;
     /* flex-direction: column; */
 }
