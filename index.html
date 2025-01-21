@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,53 +8,70 @@
     <link rel="stylesheet" href="./styles.css" />
     <title>KlockOut by Minty.Ry</title>
 </head>
-<body>
-   <header>
-    <p>KlockOut</p>
-   </header>
-   <main>
-    <section>
-        <p>Monday</p>
-        <div id="monday-time">
-            <label for="mon-in-hour">Select hour</label>
-            <select name="clock-in hour" id="mon-in-hour" class="in-hour">
-            </select>
-        </div>
-    </section>
-    <section>
-        <p>Tuesday</p>
-        <div id="tuesday-time">
-            <label for="tues-in-hour">Select hour</label>
-            <select name="clock-in hour" id="tues-in-hour" class="in-hour">
-            </select>
-        </div>
-    </section>
-    <section>
-        <p>Wednesday</p>
-        <div id="wednesday-time">
-            <label for="wed-in-hour">Select hour</label>
-            <select name="clock-in hour" id="wed-in-hour" class="in-hour">
-            </select>
-        </div>
-    </section>
-    <section>
-        <p>Thursday</p>
-        <div id="thursday-time">
-            <label for="thurs-in-hour">Select hour</label>
-            <select name="clock-in hour" id="thurs-in-hour" class="in-hour">
-            </select>
-        </div>
-    </section>
-    <section>
-        <p>Friday</p>
-        <div id="friday-time">
-            <label for="fri-in-hour">Select hour</label>
-            <select name="clock-in hour" id="fri-in-hour" class="in-hour">
-            </select>
-        </div>
-    </section>
-   </main>
 
-   <script src="./script.js"></script>
+<body>
+    <header>
+        <p>KlockOut</p>
+    </header>
+    <main>
+        <section>
+            <p class="day">Monday</p>
+            <!-- parent div holding columns -->
+            <div class="day-columns-div">
+                <!-- monday in-time -->
+                <div id="monday-time">
+                    <p>IN time:&ensp;</p>
+                    <select name="clock-in hour" id="mon-in-hour" class="in-hour">
+                    </select>
+                    <p class="clock-colon">:</p>
+                    <select name="clock-in minute" id="mon-in-min" class="in-min">
+                    </select>
+                </div>
+                <!-- monday lunch duration -->
+                <div class="lunch">
+                    <p>lunch</p>
+                </div>
+                <!-- calculate out time -->
+                <div class="out">
+                    <o>out</o>
+                </div>
+            </div>
+        </section>
+        <section>
+            <p>Tuesday</p>
+            <div id="tuesday-time">
+                <label for="tues-in-time">Select hour</label>
+                <select name="clock-in hour" id="tues-in-hour" class="in-hour">
+                </select>
+            </div>
+        </section>
+        <section>
+            <p>Wednesday</p>
+            <div id="wednesday-time">
+                <label for="wed-in-hour">Select hour</label>
+                <select name="clock-in hour" id="wed-in-hour" class="in-hour">
+                </select>
+            </div>
+        </section>
+        <section>
+            <p>Thursday</p>
+            <div id="thursday-time">
+                <label for="thurs-in-hour">Select hour</label>
+                <select name="clock-in hour" id="thurs-in-hour" class="in-hour">
+                </select>
+            </div>
+        </section>
+        <section>
+            <p>Friday</p>
+            <div id="friday-time">
+                <label for="fri-in-hour">Select hour</label>
+                <select name="clock-in hour" id="fri-in-hour" class="in-hour">
+                </select>
+            </div>
+        </section>
+    </main>
+
+    <script src="./script.js"></script>
 </body>
+
 </html>
