@@ -18,7 +18,11 @@ main {
     background-color: aquamarine;
 }
 
-#monday-time, #tuesday-time {
+section {
+    margin-bottom: 1rem;
+}
+
+#monday-time, #tuesday-time, #wednesday-time, #thursday-time, #friday-time {
     display: flex;
     flex-direction: column;
 }
