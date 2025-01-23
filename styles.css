@@ -31,6 +31,7 @@ section {
 .day {
     display: flex;
     justify-content: center;
+    margin: 0.2em;
 }
 
 .day-columns-div {
@@ -38,7 +39,7 @@ section {
     justify-content: space-around ;
 }
 
-#in, #tuesday-time, #wednesday-time, #thursday-time, #friday-time, .lunch, .out {
+#tuesday-time, #wednesday-time, #thursday-time, #friday-time, .in, .lunch, .out {
     display: flex;
     /* flex-direction: column; */
 }
