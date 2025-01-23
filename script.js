@@ -1,5 +1,5 @@
-let inHour = document.querySelectorAll('.in-hour');
-let inMin = document.querySelectorAll('.in-min');
+let inHour = document.querySelectorAll('.select-hour');
+let inMin = document.querySelectorAll('.select-min');
 
 // inHour is a node list, not a single element, so I'll need to use a parameter in the function to append the child
 inHour.forEach(
