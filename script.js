@@ -1,4 +1,5 @@
 let inHour = document.querySelectorAll('.in-hour');
+let inMin = document.querySelectorAll('.in-min');
 
 // inHour is a node list, not a single element, so I'll need to use a parameter in the function to append the child
 inHour.forEach(
@@ -8,11 +9,25 @@ inHour.forEach(
             let inHourOption = document.createElement('option');
             inHourOption.setAttribute('value', i);
             inHourOption.textContent = '0' + i;
-            if (i >9) {
+            if (i > 9) {
                 inHourOption.textContent = i;
             }
             selectEl.appendChild(inHourOption);
         }
 
+    }
+);
+
+inMin.forEach(
+    function (selectEl) {
+        for (i = 0; i < 60; i++) {
+            let inMinOption = document.createElement('option');
+            inMinOption.setAttribute('value', i);
+            inMinOption.textContent = '0' + i;
+            if (i > 9) {
+                inMinOption.textContent = i;
+            }
+            selectEl.appendChild(inMinOption);
+        }
     }
 );
