@@ -1,7 +1,8 @@
-// These two are node lists
+
+// these two are node lists
 let hour = document.querySelectorAll('.select-hour');
 let min = document.querySelectorAll('.select-min');
-// array so I can access either node list in a for loop
+// array of node lists so i can target in for loop efficiently
 let inOutDropdown = [hour, min];
 
 // combine hr and min with this code block; this creates dropdown options for hour and min
@@ -26,4 +27,3 @@ for (i = 0; i < inOutDropdown.length; i++) {
         }
     );
 };
-
