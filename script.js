@@ -28,7 +28,7 @@ for (i = 0; i < inOutDropdown.length; i++) {
 
 // setting options for lunch hour; don't put a number higher than 6... because who's taking a lunch even more than 6hrs?
 lunchHour.forEach(
-    function(lunchSelect) {
+    function (lunchSelect) {
         for (i = 0; i < 7; i++) {
             let lunchHourOpt = document.createElement('option');
             lunchHourOpt.textContent = i;
@@ -38,4 +38,6 @@ lunchHour.forEach(
 );
 
 let monInHour = document.querySelector('#mon-in-hour');
-console.log(monInHour.value);
+monInHour.addEventListener('click', function () {
+    console.log(monInHour.value);
+});
