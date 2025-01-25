@@ -24,6 +24,11 @@ section {
     margin-bottom: 1rem;
 }
 
+/* not changing anything */
+option {
+    font-size: 16px !important;
+}
+
 .clock-colon {
     margin: 0 0.5em 0 0.5em;
 }
@@ -41,5 +46,4 @@ section {
 
 #tuesday-time, #wednesday-time, #thursday-time, #friday-time, .in, .lunch, .out {
     display: flex;
-    /* flex-direction: column; */
 }

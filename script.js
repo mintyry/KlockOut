@@ -12,9 +12,7 @@ for (i = 0; i < inOutDropdown.length; i++) {
 
     inOutDropdown[i].forEach(
         function (selectEl) {
-            
             for (j = numStart[i]; j < limitNum[i]; j++) {
-    
                 let option = document.createElement('option');
                 option.setAttribute('value', j);
                 option.textContent = '0' + j;
@@ -23,7 +21,18 @@ for (i = 0; i < inOutDropdown.length; i++) {
                 }
                 selectEl.appendChild(option);
             }
-    
         }
     );
 };
+
+// setting options for lunch hour; don't put a number higher than 6... because who's taking a lunch even more than 6hrs?
+let lunchHour = document.querySelectorAll('.lunch-hour');
+lunchHour.forEach(
+    function(lunchSelect) {
+        for (i = 0; i < 7; i++) {
+            let lunchHourOpt = document.createElement('option');
+            lunchHourOpt.textContent = i;
+            lunchSelect.appendChild(lunchHourOpt);
+        }
+    }
+);
