@@ -38,6 +38,13 @@ lunchHour.forEach(
 );
 
 let monInHour = document.querySelector('#mon-in-hour');
-monInHour.addEventListener('click', function () {
-    console.log(monInHour.value);
+let monInMin = document.querySelector('#mon-in-min');
+console.log(monInHour.value);
+console.log(monInMin.value);
+// this captures value only when changed. need to capture value initially too in case user doesn't change
+monInHour.addEventListener('change', function () {
+    console.log(monInHour.value + ':' + monInMin.value);
+});
+monInMin.addEventListener('change', function () {
+    console.log(monInHour.value + ':' + monInMin.value);
 });
