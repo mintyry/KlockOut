@@ -1,7 +1,8 @@
 
-// these two are node lists
+// these are node lists
 let hour = document.querySelectorAll('.select-hour');
 let min = document.querySelectorAll('.select-min');
+let lunchHour = document.querySelectorAll('.lunch-hour');
 // array of node lists so i can target in for loop efficiently
 let inOutDropdown = [hour, min];
 
@@ -26,7 +27,6 @@ for (i = 0; i < inOutDropdown.length; i++) {
 };
 
 // setting options for lunch hour; don't put a number higher than 6... because who's taking a lunch even more than 6hrs?
-let lunchHour = document.querySelectorAll('.lunch-hour');
 lunchHour.forEach(
     function(lunchSelect) {
         for (i = 0; i < 7; i++) {
@@ -36,3 +36,6 @@ lunchHour.forEach(
         }
     }
 );
+
+let monInHour = document.querySelector('#mon-in-hour');
+console.log(monInHour.value);
