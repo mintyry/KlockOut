@@ -51,4 +51,7 @@ monInMin.addEventListener('change', function () {
     console.log(monInHour.value + ':' + monInMin.value);
     console.log(parseInt(monInHour.value));
     console.log(typeof parseInt(monInHour.value))
+
+    let hourNum = parseInt(monInHour.value);
+    console.log(hourNum + ':' + monInMin.value);
 });
