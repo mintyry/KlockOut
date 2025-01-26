@@ -15,10 +15,11 @@ for (i = 0; i < inOutDropdown.length; i++) {
         function (selectEl) {
             for (j = numStart[i]; j < limitNum[i]; j++) {
                 let option = document.createElement('option');
-                option.setAttribute('value', j);
-                option.textContent = '0' + j;
+                let optionValue = option.textContent = '0' + j;
+                option.setAttribute('value', optionValue);
                 if (j > 9) {
-                    option.textContent = j;
+                    optionValue = option.textContent = j;
+                    option.setAttribute('value', optionValue);
                 }
                 selectEl.appendChild(option);
             }
@@ -46,5 +47,8 @@ monInHour.addEventListener('change', function () {
     console.log(monInHour.value + ':' + monInMin.value);
 });
 monInMin.addEventListener('change', function () {
+    console.log("hour is: " + typeof monInHour.value + " and minute is: " + typeof monInMin.value);
     console.log(monInHour.value + ':' + monInMin.value);
+    console.log(parseInt(monInHour.value));
+    console.log(typeof parseInt(monInHour.value))
 });
