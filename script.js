@@ -38,20 +38,30 @@ lunchHour.forEach(
     }
 );
 
+// access the monday IN hour and IN minute
 let monInHour = document.querySelector('#mon-in-hour');
 let monInMin = document.querySelector('#mon-in-min');
+// log values for both
 console.log(monInHour.value);
 console.log(monInMin.value);
-// this captures value only when changed. need to capture value initially too in case user doesn't change
+
+// function gets values of both elements,  converts hour's string to number, combines them into time, time gets updated and logged/captured
+function captureTime() {
+    let hourValue = parseInt(monInHour.value);
+    let minValue = monInMin.value;
+    let monTime = hourValue + ':' + minValue;
+    monTime = hourValue + ':' + minValue;
+    console.log(monTime);
+};
+// call function to capture default time (whatever's set at page load)
+captureTime();
+
+// then change monTime based on user's selection for IN hour and minute
 monInHour.addEventListener('change', function () {
-    console.log(monInHour.value + ':' + monInMin.value);
+    captureTime();
 });
 monInMin.addEventListener('change', function () {
-    console.log("hour is: " + typeof monInHour.value + " and minute is: " + typeof monInMin.value);
-    console.log(monInHour.value + ':' + monInMin.value);
-    console.log(parseInt(monInHour.value));
-    console.log(typeof parseInt(monInHour.value))
-
-    let hourNum = parseInt(monInHour.value);
-    console.log(hourNum + ':' + monInMin.value);
+    captureTime();
 });
+// then display as KlockoutTime
+// need to add PM and AM
