@@ -63,5 +63,4 @@ monInHour.addEventListener('change', function () {
 monInMin.addEventListener('change', function () {
     captureTime();
 });
-// then display as KlockoutTime
-// need to add PM and AM
+
