@@ -74,14 +74,28 @@ lunchHour.forEach(
 // min.forEach((dayMin) => console.log(dayMin.value));
 hour.forEach(
     function(dayHour) {
-        let hourValue;
-        hourValue= parseInt(dayHour.value);
+        let hourValue = parseInt(dayHour.value);
+          // captures initial value (hr: 1)
         console.log(hourValue);
+        // event listener for when user selects an hour
         dayHour.addEventListener('change', function() {
-            // default value
-            hourValue= parseInt(dayHour.value);
+            hourValue = parseInt(dayHour.value);
+              // captures changed value
             console.log(hourValue);
-            // runs function again for each select-hour element, which then repeats the first console.log in this forEach function and shows the updated value
+        })
+    }
+);
+
+min.forEach(
+    function(dayMin) {
+        let minValue = parseInt(dayMin.value);
+          // captures initial value (min: 0)
+        console.log(minValue);
+        // event listener for when user selects a minute
+        dayMin.addEventListener('change', function() {
+            hourValue = parseInt(dayMin.value);
+              // captures changed value
+            console.log(minValue);
         })
     }
 );
