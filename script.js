@@ -5,12 +5,16 @@ let lunchHour = document.querySelectorAll('.lunch-hour');
 // array of node lists so i can target in for loop efficiently
 let hourMin = [hour, min];
 
+// access the monday IN hour and IN minute
+let monInHour = document.querySelector('#mon-in-hour');
+let monInMin = document.querySelector('#mon-in-min');
+
 // combine hr and min with this code block; 
 for (i = 0; i < hourMin.length; i++) {
     const numStart = [1, 0];
     const limitNum = [13, 60];
 
-// this creates dropdown options for hour and min
+    // this creates dropdown options for hour and min
     hourMin[i].forEach(
         function (selectEl) {
             for (j = numStart[i]; j < limitNum[i]; j++) {
@@ -28,15 +32,18 @@ for (i = 0; i < hourMin.length; i++) {
 
     // captures value for hour and minute
     hourMin[i].forEach(
-        function(timeSelect) {
+        function (timeSelect) {
             let timeSelectValue = parseInt(timeSelect.value);
-              // captures initial value (hr: 1)
+            // captures initial value (hr: 1)
             console.log(timeSelectValue);
             // event listener for when user selects an hour
-            timeSelect.addEventListener('change', function() {
+            timeSelect.addEventListener('change', function () {
                 timeSelectValue = parseInt(timeSelect.value);
-                  // captures changed value
+                // captures changed value
                 console.log(timeSelectValue);
+                // log values for both
+                console.log(monInHour.value);
+                console.log(monInMin.value);
             })
         }
     );
@@ -53,11 +60,6 @@ lunchHour.forEach(
     }
 );
 
-// access the monday IN hour and IN minute
-let monInHour = document.querySelector('#mon-in-hour');
-let monInMin = document.querySelector('#mon-in-min');
-// log values for both
-console.log(monInHour.value);
-console.log(monInMin.value);
+
 
 
