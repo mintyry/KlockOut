@@ -4,14 +4,14 @@ let hour = document.querySelectorAll('.select-hour');
 let min = document.querySelectorAll('.select-min');
 let lunchHour = document.querySelectorAll('.lunch-hour');
 // array of node lists so i can target in for loop efficiently
-let inOutDropdown = [hour, min];
+let hourMin = [hour, min];
 
 // combine hr and min with this code block; this creates dropdown options for hour and min
-for (i = 0; i < inOutDropdown.length; i++) {
+for (i = 0; i < hourMin.length; i++) {
     const numStart = [1, 0];
     const limitNum = [13, 60];
 
-    inOutDropdown[i].forEach(
+    hourMin[i].forEach(
         function (selectEl) {
             for (j = numStart[i]; j < limitNum[i]; j++) {
                 let option = document.createElement('option');
@@ -25,7 +25,23 @@ for (i = 0; i < inOutDropdown.length; i++) {
             }
         }
     );
+
+    hourMin[i].forEach(
+        function(timeSelect) {
+            let timeSelectValue = parseInt(timeSelect.value);
+              // captures initial value (hr: 1)
+            console.log(timeSelectValue);
+            // event listener for when user selects an hour
+            timeSelect.addEventListener('change', function() {
+                timeSelectValue = parseInt(timeSelect.value);
+                  // captures changed value
+                console.log(timeSelectValue);
+            })
+        }
+    );
 };
+
+
 
 // setting options for lunch hour; don't put a number higher than 6... because who's taking a lunch even more than 6hrs?
 lunchHour.forEach(
@@ -72,33 +88,39 @@ lunchHour.forEach(
 
 // hour.forEach((dayHour) => console.log(dayHour.value));
 // min.forEach((dayMin) => console.log(dayMin.value));
-hour.forEach(
-    function(dayHour) {
-        let hourValue = parseInt(dayHour.value);
-          // captures initial value (hr: 1)
-        console.log(hourValue);
-        // event listener for when user selects an hour
-        dayHour.addEventListener('change', function() {
-            hourValue = parseInt(dayHour.value);
-              // captures changed value
-            console.log(hourValue);
-        })
-    }
-);
 
-min.forEach(
-    function(dayMin) {
-        let minValue = parseInt(dayMin.value);
-          // captures initial value (min: 0)
-        console.log(minValue);
-        // event listener for when user selects a minute
-        dayMin.addEventListener('change', function() {
-            hourValue = parseInt(dayMin.value);
-              // captures changed value
-            console.log(minValue);
-        })
-    }
-);
+
+
+
+
+
+// hour.forEach(
+//     function(dayHour) {
+//         let hourValue = parseInt(dayHour.value);
+//           // captures initial value (hr: 1)
+//         console.log(hourValue);
+//         // event listener for when user selects an hour
+//         dayHour.addEventListener('change', function() {
+//             hourValue = parseInt(dayHour.value);
+//               // captures changed value
+//             console.log(hourValue);
+//         })
+//     }
+// );
+
+// min.forEach(
+//     function(dayMin) {
+//         let minValue = parseInt(dayMin.value);
+//           // captures initial value (min: 0)
+//         console.log(minValue);
+//         // event listener for when user selects a minute
+//         dayMin.addEventListener('change', function() {
+//             minValue = parseInt(dayMin.value);
+//               // captures changed value
+//             console.log(minValue);
+//         })
+//     }
+// );
 // function captureTime() {
   
 // };
