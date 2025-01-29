@@ -53,4 +53,11 @@ lunchHour.forEach(
     }
 );
 
+// access the monday IN hour and IN minute
+let monInHour = document.querySelector('#mon-in-hour');
+let monInMin = document.querySelector('#mon-in-min');
+// log values for both
+console.log(monInHour.value);
+console.log(monInMin.value);
+
 
