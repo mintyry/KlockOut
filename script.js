@@ -42,8 +42,6 @@ for (i = 0; i < hourMin.length; i++) {
     );
 };
 
-
-
 // setting options for lunch hour; don't put a number higher than 6... because who's taking a lunch even more than 6hrs?
 lunchHour.forEach(
     function (lunchSelect) {
@@ -55,75 +53,4 @@ lunchHour.forEach(
     }
 );
 
-// // access the monday IN hour and IN minute
-// let monInHour = document.querySelector('#mon-in-hour');
-// let monInMin = document.querySelector('#mon-in-min');
-// // log values for both
-// console.log(monInHour.value);
-// console.log(monInMin.value);
 
-// // function gets values of both elements,  converts hour's string to number, combines them into time, time gets updated and logged/captured
-// function captureTime() {
-//     let hourValue = parseInt(monInHour.value);
-//     let minValue = monInMin.value;
-//     let monTime = hourValue + ':' + minValue;
-//     monTime = hourValue + ':' + minValue;
-//     console.log(monTime);
-// };
-// // call function to capture default time (whatever's set at page load)
-// captureTime();
-
-// // then change monTime based on user's selection for IN hour and minute
-// monInHour.addEventListener('change', function () {
-//     captureTime();
-// });
-// monInMin.addEventListener('change', function () {
-//     captureTime();
-// });
-
-// using the code above as a template, try to access and capture all in-times instead of one by one
-// use variable hour from top of script to access .select-hour
-
-// hour.value is undef, because hour is a node list
-// console.log(hour.value);
-
-// hour.forEach((dayHour) => console.log(dayHour.value));
-// min.forEach((dayMin) => console.log(dayMin.value));
-
-
-
-
-
-
-// hour.forEach(
-//     function(dayHour) {
-//         let hourValue = parseInt(dayHour.value);
-//           // captures initial value (hr: 1)
-//         console.log(hourValue);
-//         // event listener for when user selects an hour
-//         dayHour.addEventListener('change', function() {
-//             hourValue = parseInt(dayHour.value);
-//               // captures changed value
-//             console.log(hourValue);
-//         })
-//     }
-// );
-
-// min.forEach(
-//     function(dayMin) {
-//         let minValue = parseInt(dayMin.value);
-//           // captures initial value (min: 0)
-//         console.log(minValue);
-//         // event listener for when user selects a minute
-//         dayMin.addEventListener('change', function() {
-//             minValue = parseInt(dayMin.value);
-//               // captures changed value
-//             console.log(minValue);
-//         })
-//     }
-// );
-// function captureTime() {
-  
-// };
-
-// captureTime();
