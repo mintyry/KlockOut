@@ -1,4 +1,3 @@
-
 // these are node lists
 let hour = document.querySelectorAll('.select-hour');
 let min = document.querySelectorAll('.select-min');
@@ -6,11 +5,12 @@ let lunchHour = document.querySelectorAll('.lunch-hour');
 // array of node lists so i can target in for loop efficiently
 let hourMin = [hour, min];
 
-// combine hr and min with this code block; this creates dropdown options for hour and min
+// combine hr and min with this code block; 
 for (i = 0; i < hourMin.length; i++) {
     const numStart = [1, 0];
     const limitNum = [13, 60];
 
+// this creates dropdown options for hour and min
     hourMin[i].forEach(
         function (selectEl) {
             for (j = numStart[i]; j < limitNum[i]; j++) {
@@ -26,6 +26,7 @@ for (i = 0; i < hourMin.length; i++) {
         }
     );
 
+    // captures value for hour and minute
     hourMin[i].forEach(
         function(timeSelect) {
             let timeSelectValue = parseInt(timeSelect.value);
