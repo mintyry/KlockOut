@@ -51,14 +51,25 @@ for (i = 0; i < hourMin.length; i++) {
     // );
 };
 
+// days array for variable and id names
 let days = ['mon', 'tues', 'wed', 'thurs', 'fri'];
+// empty object to store day data
+let dayElements = {};
+
 // loop for day id elements
 for (i = 0; i < days.length; i++) {
-    // access the monday IN hour and IN minute
-    let dayHourEl = document.querySelector(`#${days[i]}-in-hour`);
-    // let dayMinEl = document.querySelector(`#${days[i]}--in-min`);
-    console.log(dayHourEl);
+//    access elements to store in obj
+    dayElements[`${days[i]}InHour`] = document.querySelector(`#${days[i]}-in-hour`);
+    dayElements[`${days[i]}InMin`] = document.querySelector(`#${days[i]}-in-min`);
+    // logs individual element
+    console.log(dayElements[`${days[i]}InHour`]);
+    // logs individual element's value
+    console.log(dayElements[`${days[i]}InHour`].value);
 };
+// logs elements in the dayElements object
+console.log(dayElements);
+
+
 
 
 
