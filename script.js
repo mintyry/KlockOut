@@ -51,7 +51,7 @@ for (i = 0; i < hourMin.length; i++) {
     // );
 };
 
-let days = [mon, tues, wed, thurs, fri];
+let days = ['mon', 'tues', 'wed', 'thurs', 'fri'];
 // loop for day id elements
 for (i = 0; i < days.length; i++) {
     // access the monday IN hour and IN minute
