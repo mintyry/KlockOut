@@ -61,18 +61,19 @@ for (i = 0; i < days.length; i++) {
 //    access elements to store in obj (index 0 is Mon, 1 is Tues, etc)
     dayElements[`${days[i]}InHour`] = document.querySelector(`#${days[i]}-in-hour`);
     dayElements[`${days[i]}InMin`] = document.querySelector(`#${days[i]}-in-min`);
+    let day = days[i];
     // logs individual hour element
     console.log(dayElements[`${days[i]}InHour`]);
     // logs individual element's hour value
     console.log(dayElements[`${days[i]}InHour`].value);
 
-    dayElements[`${days[i]}InHour`].addEventlistener('change', 
+    dayElements[`${days[i]}InHour`].addEventListener('change', 
         function() {
-            let hourValue = parseInt(dayElements[`${days[i]}InHour`].value);
-            console.log(days[i] + '\'s hour: ' + hourValue);
+            // declaring day variable ourside of event listener allows this codeblock to capture the correct days[i] index because  in each iteration, a new variable day is created with a unique value
+            let hourValue = parseInt(dayElements[`${day}InHour`].value);
+            console.log(day + '\'s hour: ' + hourValue);
         }
     )
-
 };
 
 
