@@ -59,7 +59,9 @@ for (i = 0; i < days.length; i++) {
 
                 let hrMinValue = parseInt(dayElements[`${day + hrMin}`].value);
                 console.log(day + '\'s hour or min: ' + hrMinValue);
-                console.log( dayElements.monInHour.value + ':' + dayElements.monInMin.value);
+                console.log(
+                    days.map(d => `${dayElements[`${d}InHour`].value}:${dayElements[`${d}InMin`].value}`).join(' | ')
+                );
             }
         )
     }
