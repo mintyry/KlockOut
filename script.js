@@ -52,12 +52,20 @@ for (i = 0; i < days.length; i++) {
         dayElements[`${days[i] + hrMinString[j]}`].addEventListener('change',
             function () {
                 // declaring day variable ourside of event listener allows this codeblock to capture the correct days[i] index because  in each iteration, a new variable day is created with a unique value
+                // When the event fires, it uses the specific day and hrMin values that were captured when the listener was added.
+                // ✅ Why This Works: let creates a new block-scoped variable in every loop iteration.
+                // When the event listener is added, it captures the day and hrMin values at that specific moment in the loop.
+                // When the event fires later, it refers to the correct values stored in day and hrMin instead of looking up days[i] and hrMinString[j] again.
+
                 let hrMinValue = parseInt(dayElements[`${day + hrMin}`].value);
                 console.log(day + '\'s hour or min: ' + hrMinValue);
+                console.log( dayElements.monInHour.value + ':' + dayElements.monInMin.value);
             }
         )
     }
 };
+
+console.log( dayElements.monInHour.value + ':' + dayElements.monInMin.value);
 
 // setting options for lunch hour; don't put a number higher than 6... because who's taking a lunch even more than 6hrs?
 lunchHour.forEach(
