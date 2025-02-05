@@ -50,25 +50,11 @@ for (i = 0; i < days.length; i++) {
         let hrMin = hrMinString[j];
         // makes button per loop
         dayElements[`${days[i] + hrMinString[j]}`].addEventListener('change',
-            function () {
-                // declaring day variable ourside of event listener allows this codeblock to capture the correct days[i] index because  in each iteration, a new variable day is created with a unique value
-                // When the event fires, it uses the specific day and hrMin values that were captured when the listener was added.
-                // ✅ Why This Works: let creates a new block-scoped variable in every loop iteration.
-                // When the event listener is added, it captures the day and hrMin values at that specific moment in the loop.
-                // When the event fires later, it refers to the correct values stored in day and hrMin instead of looking up days[i] and hrMinString[j] again.
-
-                let hrMinValue = parseInt(dayElements[`${day + hrMin}`].value);
-                console.log(day + '\'s hour or min: ' + hrMinValue);
-                console.log(
-                    // map through days array, and run function on each element in array
-                    // so on mon, we access monInHour in the dayElements object and get its value : monInMin value
-                    // we access all elements of array, apply them to access the object's elements' names, use these names to access the element from the object and get its value
-                    days.map(
-                        function (d) { `${dayElements[`${d}InHour`].value}:
-                        ${dayElements[`${d}InMin`].value}` }
-                    )
-                        .join(' | ')
-                );
+            function (event) {
+            //   use event.target to target and access the values/changes to specific day's elements
+            let changedElement = event.target;
+            // successfully logs element
+            console.log(changedElement);
             }
         )
     }
