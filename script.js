@@ -48,7 +48,7 @@ for (i = 0; i < days.length; i++) {
         console.log(dayElements[`${days[i] + hrMinString[j]}`].value);
 
         let hrMin = hrMinString[j];
-
+        // makes button per loop
         dayElements[`${days[i] + hrMinString[j]}`].addEventListener('change',
             function () {
                 // declaring day variable ourside of event listener allows this codeblock to capture the correct days[i] index because  in each iteration, a new variable day is created with a unique value
@@ -60,14 +60,21 @@ for (i = 0; i < days.length; i++) {
                 let hrMinValue = parseInt(dayElements[`${day + hrMin}`].value);
                 console.log(day + '\'s hour or min: ' + hrMinValue);
                 console.log(
-                    days.map(d => `${dayElements[`${d}InHour`].value}:${dayElements[`${d}InMin`].value}`).join(' | ')
+                    // map through days array, and run function on each element in array
+                    // so on mon, we access monInHour in the dayElements object and get its value : monInMin value
+                    // we access all elements of array, apply them to access the object's elements' names, use these names to access the element from the object and get its value
+                    days.map(
+                        function (d) { `${dayElements[`${d}InHour`].value}:
+                        ${dayElements[`${d}InMin`].value}` }
+                    )
+                        .join(' | ')
                 );
             }
         )
     }
 };
 
-console.log( dayElements.monInHour.value + ':' + dayElements.monInMin.value);
+console.log(dayElements.monInHour.value + ':' + dayElements.monInMin.value);
 
 // setting options for lunch hour; don't put a number higher than 6... because who's taking a lunch even more than 6hrs?
 lunchHour.forEach(
