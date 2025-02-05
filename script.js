@@ -50,11 +50,10 @@ for (i = 0; i < days.length; i++) {
         let hrMin = hrMinString[j];
         // makes button per loop
         dayElements[`${days[i] + hrMinString[j]}`].addEventListener('change',
-            function (event) {
-            //   use event.target to target and access the values/changes to specific day's elements
-            let changedElement = event.target;
-            // successfully logs element
-            console.log(changedElement);
+            function () {
+                let updatedHour = dayElements[`${day}InHour`].value;
+                let updatedMin = dayElements[`${day}InMin`].value;
+                console.log(`Updated time for ${day}: ${updatedHour}:${updatedMin}`);
             }
         )
     }
