@@ -34,26 +34,32 @@ let dayElements = {};
 
 // loop for day id elements
 for (i = 0; i < days.length; i++) {
-    //    access elements to store in obj (index 0 is Mon, 1 is Tues, etc)
+    // access elements to store into obj (just note that it orders them alphabetically)
+    // eg: dayElements[monInHour] = document.querySelector('mon-in-hour)
     dayElements[`${days[i]}InHour`] = document.querySelector(`#${days[i]}-in-hour`);
+    // eg: dayElements[monInMin] = document.querySelector('mon-in-min)
     dayElements[`${days[i]}InMin`] = document.querySelector(`#${days[i]}-in-min`);
 
+    console.log(dayElements);
+
+    // establish a day variable for each loop
+    // eg: day = 'mon'; this allows the event listener to be applied to each day's elements
     let day = days[i];
     let hrMinString = ['InHour', 'InMin'];
 
-    // logs individual hour element
     for (j = 0; j < hrMinString.length; j++) {
+        // first loop console.log(dayElements['monInHour])
+        // second loop console.log(dayElements['monInMin])
         console.log(dayElements[`${days[i] + hrMinString[j]}`]);
         // logs individual element's hour value
         console.log(dayElements[`${days[i] + hrMinString[j]}`].value);
 
-        let hrMin = hrMinString[j];
         // makes button per loop
         dayElements[`${days[i] + hrMinString[j]}`].addEventListener('change',
             function () {
-                let updatedHour = dayElements[`${day}InHour`].value;
-                let updatedMin = dayElements[`${day}InMin`].value;
-                console.log(`Updated time for ${day}: ${updatedHour}:${updatedMin}`);
+                let newHour = dayElements[`${day}InHour`].value;
+                let newMin = dayElements[`${day}InMin`].value;
+                console.log(`Updated time for ${day}: ${newHour}:${newMin}`);
             }
         )
     }
