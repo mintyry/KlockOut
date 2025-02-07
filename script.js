@@ -28,6 +28,21 @@ for (i = 0; i < hourMin.length; i++) {
     );
 };
 
+// ADD AM & PM VALUES TO IN DIVS
+let amPmEl = document.querySelectorAll('.select-am-pm');
+let amPm = ['am', 'pm'];
+
+amPmEl.forEach(
+    function (selectEl) {
+        for (i = 0; i < amPm.length; i++) {
+            let amPmOpt = document.createElement('option');
+            amPmOpt.textContent = amPm[i];
+            selectEl.appendChild(amPmOpt);
+        }
+    }
+);
+
+
 // LOGIC TO CAPTURE CLOCK IN TIMES MADE BY USER
 // days array for variable and id names
 let days = ['mon', 'tues', 'wed', 'thurs', 'fri'];
