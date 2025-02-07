@@ -38,9 +38,12 @@ amPmEl.forEach(
             let amPmOpt = document.createElement('option');
             amPmOpt.textContent = amPm[i];
             selectEl.appendChild(amPmOpt);
+            amPmOpt.setAttribute('value', amPm[i]);
         }
     }
 );
+
+// IF 12 AM, VALUE === 0; IF 1-11 PM, VALUES === 13-23
 
 
 // LOGIC TO CAPTURE CLOCK IN TIMES MADE BY USER
@@ -81,7 +84,6 @@ for (i = 0; i < days.length; i++) {
         )
     }
 };
-
 
 // NUMBER VALUES IN LUNCH SELECT
 // setting options for lunch hour; don't put a number higher than 6... because who's taking a lunch even more than 6hrs?
