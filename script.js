@@ -5,6 +5,7 @@ let lunchHour = document.querySelectorAll('.lunch-hour');
 // array of node lists so i can target in for loop efficiently
 let hourMin = [hour, min];
 
+// ADD NUMBER VALUES TO IN HOUR AND MIN
 // combine hr and min with this code block; 
 for (i = 0; i < hourMin.length; i++) {
     const numStart = [1, 0];
@@ -27,6 +28,7 @@ for (i = 0; i < hourMin.length; i++) {
     );
 };
 
+// LOGIC TO CAPTURE CLOCK IN TIMES MADE BY USER
 // days array for variable and id names
 let days = ['mon', 'tues', 'wed', 'thurs', 'fri'];
 // empty object to store day data
@@ -65,8 +67,8 @@ for (i = 0; i < days.length; i++) {
     }
 };
 
-console.log(dayElements.monInHour.value + ':' + dayElements.monInMin.value);
 
+// NUMBER VALUES IN LUNCH SELECT
 // setting options for lunch hour; don't put a number higher than 6... because who's taking a lunch even more than 6hrs?
 lunchHour.forEach(
     function (lunchSelect) {
