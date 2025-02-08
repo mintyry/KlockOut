@@ -28,7 +28,7 @@ for (i = 0; i < hourMin.length; i++) {
     );
 };
 
-// ADD AM & PM VALUES TO IN DIVS
+// ADD AM & PM CONTENT TO IN DIVS
 let amPmEl = document.querySelectorAll('.select-am-pm');
 let amPm = ['am', 'pm'];
 
@@ -59,6 +59,8 @@ for (i = 0; i < days.length; i++) {
     dayElements[`${days[i]}InHour`] = document.querySelector(`#${days[i]}-in-hour`);
     // eg: dayElements[monInMin] = document.querySelector('mon-in-min)
     dayElements[`${days[i]}InMin`] = document.querySelector(`#${days[i]}-in-min`);
+
+    dayElements[`${days[i]}InAmPm`] = document.querySelector(`#${days[i]}-am-pm`);
 
     console.log(dayElements);
 
