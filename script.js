@@ -55,11 +55,11 @@ let dayElements = {};
 // loop for day id elements
 for (i = 0; i < days.length; i++) {
     // access elements to store into obj (just note that it orders them alphabetically)
-    // eg: dayElements[monInHour] = document.querySelector('mon-in-hour)
+    // eg: dayElements[monInHour] = document.querySelector('mon-in-hour');
     dayElements[`${days[i]}InHour`] = document.querySelector(`#${days[i]}-in-hour`);
-    // eg: dayElements[monInMin] = document.querySelector('mon-in-min)
+    // eg: dayElements[monInMin] = document.querySelector('mon-in-min');
     dayElements[`${days[i]}InMin`] = document.querySelector(`#${days[i]}-in-min`);
-
+    // eg: dayElements[monInAmPm] = document.querySelector('#mon-am-pm');
     dayElements[`${days[i]}InAmPm`] = document.querySelector(`#${days[i]}-am-pm`);
 
     console.log(dayElements);
@@ -67,21 +67,24 @@ for (i = 0; i < days.length; i++) {
     // establish a day variable for each loop
     // eg: day = 'mon'; this allows the event listener to be applied to each day's elements
     let day = days[i];
-    let hrMinString = ['InHour', 'InMin'];
+    let hrMinString = ['InHour', 'InMin', 'InAmPm'];
 
     for (j = 0; j < hrMinString.length; j++) {
-        // first loop console.log(dayElements['monInHour])
-        // second loop console.log(dayElements['monInMin])
+        // first loop console.log(dayElements['monInHour'])
+        // second loop console.log(dayElements['monInMin'])
+          // third loop console.log(dayElements['monInAmPm'])
         console.log(dayElements[`${days[i] + hrMinString[j]}`]);
         // logs individual element's hour value
         console.log(dayElements[`${days[i] + hrMinString[j]}`].value);
+
 
         // makes button per loop
         dayElements[`${days[i] + hrMinString[j]}`].addEventListener('change',
             function () {
                 let newHour = dayElements[`${day}InHour`].value;
                 let newMin = dayElements[`${day}InMin`].value;
-                console.log(`Updated time for ${day}: ${newHour}:${newMin}`);
+                let newAmPm = dayElements[`${day}InAmPm`].value;
+                console.log(`Updated time for ${day}: ${newHour}:${newMin} ${newAmPm}`);
             }
         )
     }
