@@ -88,6 +88,7 @@ for (i = 0; i < days.length; i++) {
                 let klockInTime = `${newHour}:${newMin} ${newAmPm}`;
                 console.log(`Updated time for ${day}: ${klockInTime}`);
                 console.log(getKlockInTimes());
+                console.log(getKlockInTimes()['mon']);
             }
         )
     }
