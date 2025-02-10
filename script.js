@@ -105,7 +105,7 @@ function getKlockInTimes() {
     return klockInTimes;
 }
 
-console.log(getKlockInTimes());
+console.log(getKlockInTimes()['mon']);
 
 // NUMBER VALUES IN LUNCH SELECT
 // setting options for lunch hour; don't put a number higher than 6... because who's taking a lunch even more than 6hrs?
