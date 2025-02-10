@@ -81,10 +81,12 @@ for (i = 0; i < days.length; i++) {
         // makes button per loop
         dayElements[`${days[i] + hrMinString[j]}`].addEventListener('change',
             function () {
+                // captures clock-in selection
                 let newHour = dayElements[`${day}InHour`].value;
                 let newMin = dayElements[`${day}InMin`].value;
                 let newAmPm = dayElements[`${day}InAmPm`].value;
-                console.log(`Updated time for ${day}: ${newHour}:${newMin} ${newAmPm}`);
+                let klockInTime = `${newHour}:${newMin} ${newAmPm}`;
+                console.log(`Updated time for ${day}: ${klockInTime}`);
             }
         )
     }
