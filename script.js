@@ -87,10 +87,25 @@ for (i = 0; i < days.length; i++) {
                 let newAmPm = dayElements[`${day}InAmPm`].value;
                 let klockInTime = `${newHour}:${newMin} ${newAmPm}`;
                 console.log(`Updated time for ${day}: ${klockInTime}`);
+                console.log(getKlockInTimes());
             }
         )
     }
 };
+
+// access times for each day out of the loop/event listener
+function getKlockInTimes() {
+    let klockInTimes = {};
+    days.forEach(day => {
+        let newHour = dayElements[`${day}InHour`].value;
+        let newMin = dayElements[`${day}InMin`].value;
+        let newAmPm = dayElements[`${day}InAmPm`].value;
+        klockInTimes[day] = `${newHour}:${newMin} ${newAmPm}`;
+    });
+    return klockInTimes;
+}
+
+console.log(getKlockInTimes());
 
 // NUMBER VALUES IN LUNCH SELECT
 // setting options for lunch hour; don't put a number higher than 6... because who's taking a lunch even more than 6hrs?
