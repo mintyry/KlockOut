@@ -89,6 +89,7 @@ for (i = 0; i < days.length; i++) {
                 console.log(`Updated time for ${day}: ${klockInTime}`);
                 console.log(getKlockInTimes());
                 console.log(getKlockInTimes()['mon']);
+                getKlockOutTimes();
             }
         )
     }
@@ -99,9 +100,9 @@ function getKlockInTimes() {
     let klockInTimes = {};
     days.forEach(day => {
         let newHour = dayElements[`${day}InHour`].value;
-        newHour = parseInt(newHour);
+        // newHour = parseInt(newHour);
         let newMin = dayElements[`${day}InMin`].value;
-        newMin = parseInt(newMin);
+        // newMin = parseInt(newMin);
         let newAmPm = dayElements[`${day}InAmPm`].value;
         klockInTimes[day] = `${newHour}:${newMin} ${newAmPm}`;
     });
@@ -116,7 +117,7 @@ function getKlockOutTimes() {
     console.log(formattedMonTime);
 }
 
-getKlockOutTimes();
+// getKlockOutTimes();
 
 // NUMBER VALUES IN LUNCH SELECT
 // setting options for lunch hour; don't put a number higher than 6... because who's taking a lunch even more than 6hrs?
