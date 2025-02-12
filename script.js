@@ -43,8 +43,6 @@ amPmEl.forEach(
     }
 );
 
-// IF 12 AM, VALUE === 0; IF 1-11 PM, VALUES === 13-23
-
 
 // LOGIC TO CAPTURE CLOCK IN TIMES MADE BY USER
 // days array for variable and id names
@@ -88,12 +86,15 @@ for (i = 0; i < days.length; i++) {
                 let klockInTime = `${newHour}:${newMin} ${newAmPm}`;
                 console.log(`Updated time for ${day}: ${klockInTime}`);
                 console.log(getKlockInTimes());
-                console.log(getKlockInTimes()['mon']);
-                getKlockOutTimes();
+                // console.log(getKlockInTimes()['mon']);
+                // // it's a string
+                // console.log(typeof getKlockInTimes()['mon']);
+               
             }
         )
     }
 };
+
 
 // access times for each day out of the loop/event listener
 function getKlockInTimes() {
@@ -109,14 +110,40 @@ function getKlockInTimes() {
     return klockInTimes;
 }
 
-console.log(getKlockInTimes().mon);
+// get hour and minute value for each day
 
-function getKlockOutTimes() {
-    let monKlockInTime = getKlockInTimes().mon;
-    let formattedMonTime = dayjs(monKlockInTime, "hh:mm a");
-    console.log(formattedMonTime);
+let parsedTimes = {};
+
+for (let day in getKlockInTimes()) {
+    let timeSplit = (getKlockInTimes()[day]).split(' ');
+    console.log(timeSplit);
+    let splitHrMin = timeSplit[0].split(":");
+    console.log(splitHrMin);
+    // console.log(`Hour: ${splitHrMin[0]}`);
+    // console.log(`Minute: ${splitHrMin[1]}`);
+
+    parsedTimes[day] = {
+        hour: splitHrMin[0],
+        min: splitHrMin[1],
+        ampm: timeSplit[1]
+    };
 }
 
+console.log("Mon hour: " + parsedTimes.mon.hour);
+
+
+// IF 12 AM, VALUE === 0; IF 1-11 PM, VALUES === 13-23
+// might need to be in a function
+// newHour, newMin, newAmPm
+
+
+
+
+// function getKlockOutTimes() {
+//     let monKlockInTime = getKlockInTimes().mon;
+//     let formattedMonTime = dayjs(monKlockInTime, "hh:mm a");
+//     console.log(formattedMonTime);
+// }
 // getKlockOutTimes();
 
 // NUMBER VALUES IN LUNCH SELECT
