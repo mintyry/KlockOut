@@ -60,6 +60,7 @@ for (i = 0; i < days.length; i++) {
     // eg: dayElements[monInAmPm] = document.querySelector('#mon-am-pm');
     dayElements[`${days[i]}InAmPm`] = document.querySelector(`#${days[i]}-am-pm`);
 
+    // logs each day elements; eg: mon-in-hour, mon-in-min, mon-in-ampm
     console.log(dayElements);
 
     // establish a day variable for each loop
@@ -83,9 +84,14 @@ for (i = 0; i < days.length; i++) {
                 let newHour = dayElements[`${day}InHour`].value;
                 let newMin = dayElements[`${day}InMin`].value;
                 let newAmPm = dayElements[`${day}InAmPm`].value;
-                let klockInTime = `${newHour}:${newMin} ${newAmPm}`;
-                console.log(`Updated time for ${day}: ${klockInTime}`);
-                console.log(getKlockInTimes());
+                console.log(newHour);
+                console.log(newMin);
+                console.log(newAmPm);
+
+                // let klockInTime = `${newHour}:${newMin} ${newAmPm}`;
+                // console.log(`Updated time for ${day}: ${klockInTime}`);
+                // console.log(getKlockInTimes());
+
                 // console.log(getKlockInTimes()['mon']);
                 // // it's a string
                 // console.log(typeof getKlockInTimes()['mon']);
@@ -96,40 +102,53 @@ for (i = 0; i < days.length; i++) {
 };
 
 
+
 // access times for each day out of the loop/event listener
+let klockInTimes = {};
 function getKlockInTimes() {
-    let klockInTimes = {};
+  
     days.forEach(day => {
         let newHour = dayElements[`${day}InHour`].value;
         // newHour = parseInt(newHour);
         let newMin = dayElements[`${day}InMin`].value;
         // newMin = parseInt(newMin);
         let newAmPm = dayElements[`${day}InAmPm`].value;
-        klockInTimes[day] = `${newHour}:${newMin} ${newAmPm}`;
+        klockInTimes[day] = {
+            hour: newHour,
+            min: newMin,
+            amPm: newAmPm
+        };
+        // `${newHour}:${newMin} ${newAmPm}`;
+        console.log(newHour);
+        console.log(newMin);
+        console.log(newAmPm);
+
     });
     return klockInTimes;
 }
 
+console.log(klockInTimes);
+
 // get hour and minute value for each day
 
-let parsedTimes = {};
+// let parsedTimes = {};
 
-for (let day in getKlockInTimes()) {
-    let timeSplit = (getKlockInTimes()[day]).split(' ');
-    console.log(timeSplit);
-    let splitHrMin = timeSplit[0].split(":");
-    console.log(splitHrMin);
-    // console.log(`Hour: ${splitHrMin[0]}`);
-    // console.log(`Minute: ${splitHrMin[1]}`);
+// for (let day in getKlockInTimes()) {
+//     let timeSplit = (getKlockInTimes()[day]).split(' ');
+//     console.log(timeSplit);
+//     let splitHrMin = timeSplit[0].split(":");
+//     console.log(splitHrMin);
+//     // console.log(`Hour: ${splitHrMin[0]}`);
+//     // console.log(`Minute: ${splitHrMin[1]}`);
 
-    parsedTimes[day] = {
-        hour: splitHrMin[0],
-        min: splitHrMin[1],
-        ampm: timeSplit[1]
-    };
-}
+//     parsedTimes[day] = {
+//         hour: splitHrMin[0],
+//         min: splitHrMin[1],
+//         ampm: timeSplit[1]
+//     };
+// }
 
-console.log("Mon hour: " + parsedTimes.mon.hour);
+// console.log("Mon hour: " + parsedTimes.mon.hour);
 
 
 // IF 12 AM, VALUE === 0; IF 1-11 PM, VALUES === 13-23
