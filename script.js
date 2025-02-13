@@ -49,6 +49,7 @@ amPmEl.forEach(
 let days = ['mon', 'tues', 'wed', 'thurs', 'fri'];
 // empty object to store day data
 let dayElements = {};
+let dayValues = {};
 
 // loop for day id elements
 for (i = 0; i < days.length; i++) {
@@ -69,12 +70,16 @@ for (i = 0; i < days.length; i++) {
     let hrMinString = ['InHour', 'InMin', 'InAmPm'];
 
     for (j = 0; j < hrMinString.length; j++) {
+        const dayKey = `${days[i] + hrMinString[j]}`;
+        // LOGS VALUES ON PAGE LOAD
         // first loop console.log(dayElements['monInHour'])
         // second loop console.log(dayElements['monInMin'])
           // third loop console.log(dayElements['monInAmPm'])
-        console.log(dayElements[`${days[i] + hrMinString[j]}`]);
+        console.log(dayElements[dayKey]);
         // logs individual element's hour value
-        console.log(dayElements[`${days[i] + hrMinString[j]}`].value);
+        console.log(dayElements[dayKey].value);
+       
+        dayValues[dayKey] = dayElements[dayKey].value;
 
 
         // makes button per loop
@@ -101,6 +106,7 @@ for (i = 0; i < days.length; i++) {
     }
 };
 
+console.log(dayValues);
 
 
 // access times for each day out of the loop/event listener
