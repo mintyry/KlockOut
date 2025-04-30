@@ -50,6 +50,7 @@ let days = ['mon', 'tues', 'wed', 'thurs', 'fri'];
 // empty object to store day data
 let dayElements = {};
 let dayValues = {};
+let newHour;
 
 // loop for day id elements
 for (i = 0; i < days.length; i++) {
