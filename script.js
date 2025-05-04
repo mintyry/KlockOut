@@ -188,7 +188,13 @@ lunchHour.forEach(
 // Day.js div test
 const today = dayjs();
 const dayJsDiv = document.querySelector('#test');
-dayJsDiv.textContent = today.format('MMM D, YYYY');
+
+// show current day
+dayJsDiv.textContent = `Today is ${today.format('dddd')}`;
+dayJsDiv.innerHTML += `<br>The time is ${today.format('h:mm a')}`;
+
+
+
 
 
 
