@@ -192,6 +192,7 @@ const dayJsDiv = document.querySelector('#test');
 // show current day
 dayJsDiv.textContent = `Today is ${today.format('dddd')}`;
 dayJsDiv.innerHTML += `<br>The time is ${today.format('h:mm a')}`;
+dayJsDiv.innerHTML += `<br>The time in 8 hours is ${today.add('8', 'hour').format('h:mm a')}`;
 
 
 
