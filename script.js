@@ -185,6 +185,10 @@ lunchHour.forEach(
     }
 );
 
+// Day.js div test
+const today = dayjs();
+$('#test').text(today.format('MMM D, YYYY'));
+
 
 
 
