@@ -111,6 +111,7 @@ console.log(dayValues);
 
 
 // access times for each day out of the loop/event listener
+// may 4, currently not executing getKlockInTimes
 let klockInTimes = {};
 function getKlockInTimes() {
   
