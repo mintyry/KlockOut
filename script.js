@@ -190,12 +190,15 @@ const today = dayjs();
 const dayJsDiv = document.querySelector('#test');
 
 
+
 // show current day
 dayJsDiv.textContent = `Today is ${today.format('dddd')}`;
 dayJsDiv.innerHTML += `<br>The time is ${today.format('h:mm a')}`;
 dayJsDiv.innerHTML += `<br>The time in 8 hours is ${today.add('8', 'hour').format('h:mm a')}`;
 dayJsDiv.innerHTML += `<br>The time I selected is 8:00 am.`;
-dayJsDiv.innerHTML += `8 hours from that time is ${today.add(8, 'hour').add(0, 'minute')}`;
+const newTime = today.add(15, 'hour').add(0, 'minute');
+// now i need to make today whatever the user selecte4d
+dayJsDiv.innerHTML += `<br>8 hours from that time is ${newTime.format('H:mm a')}`;
 
 
 
