@@ -95,9 +95,9 @@ for (i = 0; i < days.length; i++) {
                 console.log(newMin);
                 console.log(newAmPm);
 
-                // let klockInTime = `${newHour}:${newMin} ${newAmPm}`;
-                // console.log(`Updated time for ${day}: ${klockInTime}`);
-                // console.log(getKlockInTimes());
+                let klockInTime = `${newHour}:${newMin} ${newAmPm}`;
+                console.log(`Updated time for ${day}: ${klockInTime}`);
+                console.log(getKlockInTimes());
 
                 // console.log(getKlockInTimes()['mon']);
                 // // it's a string
@@ -129,8 +129,9 @@ function getKlockInTimes() {
         };
         // `${newHour}:${newMin} ${newAmPm}`;
         console.log(newHour);
-        console.log(newMin);
-        console.log(newAmPm);
+        console.log(typeof newHour);
+        // console.log(newMin);
+        // console.log(newAmPm);
 
     });
     return klockInTimes;
