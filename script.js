@@ -77,14 +77,15 @@ for (i = 0; i < days.length; i++) {
         // second loop console.log(dayElements['monInMin'])
           // third loop console.log(dayElements['monInAmPm'])
         console.log(dayElements[dayKey]);
-        // logs individual element's hour value
+        // logs individual element's initial values for hour, min, and ampm
         console.log(dayElements[dayKey].value);
+        console.log(dayKey);
        
         dayValues[dayKey] = dayElements[dayKey].value;
 
 
-        // makes button per loop
-        dayElements[`${days[i] + hrMinString[j]}`].addEventListener('change',
+        // adds event listener per loop
+        dayElements[dayKey].addEventListener('change',
             function () {
                 // captures clock-in selection
                 let newHour = dayElements[`${day}InHour`].value;
